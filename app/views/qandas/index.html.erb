@@ -1,0 +1,29 @@
+<h1>Listing qandas</h1>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Image</th>
+    <th>Position</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @qandas.each do |qanda| %>
+  <tr>
+    <td><%= qanda.question %></td>
+    <td><%= qanda.answer %></td>
+    <td><%= qanda.image %></td>
+    <td><%= qanda.position %></td>
+    <td><%= link_to 'Show', qanda %></td>
+    <td><%= link_to 'Edit', edit_qanda_path(qanda) %></td>
+    <td><%= link_to 'Destroy', qanda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Qanda', new_qanda_path %>

@@ -1,0 +1,30 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+*/
+
+ footer
+ {
+   font-size: .8em;
+   color: dimGray;
+   line-height: 1.2em;
+ }
+ 
+ .date_select, .datetime_select {
+   width: inherit !important;
+ }
+ 
+ head_sub {
+   float: right;
+   color: #AFAFAF;
+   font-weight: bold;
+   font-size: 70%;
+ }
+ 
+ .navbar .nav > li:hover {
+ background-color: #CCCBCB;
+ color: white !important;
+}

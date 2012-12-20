@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User email:</b>
+  <%= @post.user_email %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @post.user_id %>
+</p>
+
+<p>
+  <b>Qanda:</b>
+  <%= @post.qanda_id %>
+</p>
+
+<p>
+  <b>My answer:</b>
+  <%= @post.my_answer %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @post.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @post.updated_at %>
+</p>
+
+<p>
+  <b>Lock:</b>
+  <%= @post.lock %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

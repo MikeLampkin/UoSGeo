@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Merit Badge</th>
     <th>Question</th>
     <th>Answer</th>
     <th>Image</th>
@@ -13,6 +14,7 @@
 
 <% @qandas.each do |qanda| %>
   <tr>
+    <td><%= qanda.meritbadge %></td>
     <td><%= qanda.question %></td>
     <td><%= qanda.answer %></td>
     <td><%= qanda.image %></td>
@@ -26,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Qanda', new_qanda_path %>
+<%= link_to 'New Q & A', new_qanda_path %>

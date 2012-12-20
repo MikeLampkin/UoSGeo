@@ -1,3 +1,3 @@
 class Qanda < ActiveRecord::Base
-  attr_accessible :answer, :image, :position, :question
+  attr_accessible :meritbadge, :answer, :image, :position, :question
 end

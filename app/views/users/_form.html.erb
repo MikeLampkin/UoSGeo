@@ -1,40 +1,50 @@
 <%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password_confirmation, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password_confirmation, :class => 'text_field' %>
-    </div>
-  </div>
+<table class="table table-striped table-bordered span5">
+	<tr>
+		<td class="control-group"> 
+<%= f.label :email, :class => 'control-label' %>
+</td><td>
+<%= f.text_field :email, :class => 'text_field' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="control-group"> 
+<%= f.label :password, :class => 'control-label' %>
+</td><td>
+<%= f.password_field :password, :class => 'text_field' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="control-group"> 
+<%= f.label :password_confirmation, :class => 'control-label' %>
+</td><td>
+<%= f.password_field :password_confirmation, :class => 'text_field' %>
+		</td>
+	</tr>
 
-  <% if @user.id %>
-  <div class="control-group">
-    <%= f.label :admin, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :admin, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :active, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :active, :class => 'check_box' %>
-    </div>
-  </div>
-  <% end %>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
-  </div>
+<% if @user.id %>
+	<tr>
+		<td class="control-group"> 
+<%= f.label :admin, :class => 'control-label' %>
+</td><td>
+<%= f.check_box :admin, :class => 'check_box' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="control-group"> 
+<%= f.label :active, :class => 'control-label' %>
+</td><td>
+<%= f.check_box :active, :class => 'check_box' %>
+		</td>
+	</tr>
+<% end %>
+
+	<tr>
+		<td class="form-actions" colspan="2"> 
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+               root_path, :class => 'btn' %>
+		</td>
+	</tr>
+</table>
 <% end %>

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :active, :admin, :email, :password, :password_confirmation
   
+  validates :email, :presence => true
+
   before_save :first_is_admin
   
   has_secure_password

@@ -37,7 +37,7 @@
         <% if current_user %>
             <ul class="nav">
               <li><%= link_to "My Answers", posts_path  %></li>
-              <li><%= link_to 'Profile', current_user  %></li>
+              <li><%= link_to 'Profile', user_path(current_user) %></li>
                <li><%= link_to 'Logout', logout_url  %></li>
             </ul>
         <% end %>

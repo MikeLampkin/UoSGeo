@@ -1,4 +1,5 @@
 <%= form_for(@post) do |f| %>
+
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -11,35 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_email %><br />
-    <%= f.text_field :user_email %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :qanda_id %><br />
-    <%= f.number_field :qanda_id %>
-  </div>
-  <div class="field">
-    <%= f.label :my_answer %><br />
-    <%= f.text_field :my_answer %>
-  </div>
-  <div class="field">
-    <%= f.label :created_at %><br />
-    <%= f.datetime_select :created_at %>
-  </div>
-  <div class="field">
-    <%= f.label :updated_at %><br />
-    <%= f.datetime_select :updated_at %>
-  </div>
-  <div class="field">
-    <%= f.label :lock %><br />
-    <%= f.check_box :lock %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<table class="table table-striped table-bordered span3 offset0">
+  <tr>
+    <td class="field">
+    <%=f.select :qanda_id, options_from_collection_for_select(Qanda.order('meritbadge ASC'), 'id', 'meritbadge', @post.qanda_id), include_blank: true, :class => 'text_field' %>
+  </td>
+  <td class="controls">
+      <%= f.text_field :my_answer, :class => 'text_field' %>
+    </td>
+</tr>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
   </div>
 <% end %>

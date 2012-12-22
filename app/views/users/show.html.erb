@@ -6,10 +6,13 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
   <dd><%= @user.email %></dd>
+ 
+ <% if current_user && current_user.admin? %>
   <dt><strong><%= model_class.human_attribute_name(:admin) %>:</strong></dt>
   <dd><%= @user.admin %></dd>
   <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
   <dd><%= @user.active %></dd>
+<% end %>
 </dl>
 
 <div class="form-actions">
@@ -25,6 +28,8 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 <% else %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_path(@user), :class => 'btn' %>
 
 <% end %>
   <%= link_to "My Answers", posts_path, :class => 'btn btn-'  %>

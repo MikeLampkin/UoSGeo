@@ -1,22 +1,27 @@
-<h1>Log In</h1>
+<h1>
+	Log In
+</h1>
 
 <%= form_tag sessions_path, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= label_tag :email, nil, :class => 'control-label' %>
-    <div class="controls">
-      <%= text_field_tag :email, nil, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= label_tag :password, nil, :class => 'control-label' %>
-    <div class="controls">
-      <%= password_field_tag :password, nil, :class => 'text_field' %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= submit_tag 'Login', :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+<table class="table table-striped table-bordered span3 offset0">
+	<tr>
+		<td class="control-group"> 
+<%= label_tag :email, nil, :class => 'control-label' %>
+<%= text_field_tag :email, nil, :class => 'text_field' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="control-group"> 
+<%= label_tag :password, nil, :class => 'control-label' %>
+<%= password_field_tag :password, nil, :class => 'text_field' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="form-actions"> 
+<%= submit_tag 'Login', :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 root_path, :class => 'btn' %>
-  </div>
+		</td>
+	</tr>
+</table>
 <% end %>

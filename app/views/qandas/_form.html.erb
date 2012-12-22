@@ -11,27 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :meritbadge %><br />
+<table class="table table-striped table-bordered span3 offset0">
+<tr>
+  <td class="field">
+    <%= f.label :meritbadge %>
+  </td>
+  <td>
     <%= f.text_field :meritbadge %>
-  </div>
-  <div class="field">
-    <%= f.label :question %><br />
+  </td>
+</tr>
+  <tr><td class="field">
+    <%= f.label :question %>
+  </td>
+  <td>
     <%= f.text_field :question %>
-  </div>
-  <div class="field">
-    <%= f.label :answer %><br />
+  </td>
+</tr>
+<tr>
+  <td class="field">
+    <%= f.label :answer %>
+  </td>
+  <td>
     <%= f.text_field :answer %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br />
+  </td></tr>
+  <tr><td class="field">
+    <%= f.label :image %>
+  </td>
+  <td>
     <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :position %><br />
+  </td></tr>
+  <tr><td class="field">
+    <%= f.label :position %>
+  </td>
+  <td>
     <%= f.number_field :position %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </td></tr>
+  <tr><td colspan="2" class="actions">
+    <%= f.submit  'Save Q & A', :class => 'btn btn-primary' %>
+
+  </td></tr>
+</table>
+<br clear="all">
 <% end %>

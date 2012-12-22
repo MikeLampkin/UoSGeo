@@ -8,7 +8,6 @@
     <th>Answer</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @qandas.each do |qanda| %>
@@ -16,7 +15,6 @@
     <td><%= image_tag 'meritbadges/'+qanda.image, :height => '40px', :width => '40px'  %><br><%= qanda.meritbadge %></td>
     <td><%= qanda.question %></td>
     <td><%= qanda.answer %></td>
-    <td><%= link_to 'Show', qanda, :class => 'btn btn-mini btn-success' %></td>
     <td><%= link_to 'Edit', edit_qanda_path(qanda), :class => 'btn btn-mini btn-warning' %></td>
     <td><%= link_to 'Destroy', qanda, :class => 'btn btn-mini btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

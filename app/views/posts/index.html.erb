@@ -14,7 +14,11 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.qanda_id %>
-<%= image_tag 'meritbadges/'+@post.qanda_id.try(:image), :height => '40px', :width => '40px'  %><br><%= @post.qanda_id.try(:meritbadge) %>
+<%= image_tag 'meritbadges/'+@post.qandas.try(:image), :height => '40px', :width => '40px'  %>
+<br>
+<%= @post.qanda_id.try(:meritbadge) %>
+
+
     </td>
     <td><%= post.my_answer %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>

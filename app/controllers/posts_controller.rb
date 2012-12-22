@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
 
-  before_filter :lookup_qanda
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -84,7 +85,5 @@ class PostsController < ApplicationController
     end
   end
 
-    def lookup_qanda
-    @qanda = Qanda.find(params[:qanda_id])
-    end
+
 end

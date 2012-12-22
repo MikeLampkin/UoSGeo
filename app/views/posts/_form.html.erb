@@ -1,4 +1,5 @@
 <%= form_for(@post) do |f| %>
+<%= f.hidden_field :user_email, :value => current_user.email %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -21,9 +22,11 @@
       <%= f.text_field :my_answer, :class => 'text_field' %>
     </td>
 </tr>
-  <div class="form-actions">
+  <td colspan="2" class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 posts_path, :class => 'btn' %>
-  </div>
+  </td>
+</tr>
+</table>
 <% end %>

@@ -14,7 +14,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td> Count from posts with this user's ID</td>
+        <td><%= user.post.count %></td>
         <td><%= link_to 'Show', @report %></td>
       </tr>
     <% end %>

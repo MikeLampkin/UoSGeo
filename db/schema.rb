@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220232917) do
+ActiveRecord::Schema.define(:version => 20121223040924) do
 
   create_table "posts", :force => true do |t|
     t.string   "user_email"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20121220232917) do
     t.datetime "updated_at",      :null => false
     t.integer  "district_id"
     t.string   "integer"
+    t.string   "username"
   end
 
 end

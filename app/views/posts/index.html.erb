@@ -1,28 +1,28 @@
 <h1>My Answer Sheet</h1>
 
-<%= link_to 'New Answer', new_post_path, :class => 'btn btn-mini btn-primary' %>
+<div class="font-color:#ffffcc;color:red;">I would love for this page to show all the possible merit badges in the database and show the corresponding answer (or none) from the user.</div>
+
+<!-- <%= link_to 'New Answer', new_post_path, :class => 'btn btn-primary' %> -->
 
 
-<hr>
-
-<table class="table table-striped table-bordered span12 offset0">
+<table class="table table-hover table-condensed table-bordered">
   <tr>
     <th>Question</th>
-    <th>Answer</th>
-    <th></th>
+    <th>My Answer</th>
+    <th>Edit</th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
-    <td><table class="table table-bordered span6 offset0"><tr><td class="span1; text-align:center;vertical-align:middle;">
-<%= image_tag 'meritbadges/'+post.qanda.image, :height => '40px', :width => '40px'  %>
+    <td><table class="table-condensed table-hover"><tr><td class="span2"><center>
+<%= image_tag 'meritbadges/'+post.qanda.image, :height => '40px', :width => '40px'  %><br>
 <%= post.qanda.meritbadge %>
 </td>
 <td><%= post.qanda.question %></td></tr></table>
 
     </td>
     <td class="span5"><%= post.my_answer %></td>
-    <td class="span1"><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini btn-primary'  %></td>
+    <td class="span1"><center><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini btn-primary'  %></td>
 
   </tr>
 <% end %>

@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :active, :admin, :email, :password, :password_confirmation
+  attr_accessible :active, :username, :admin, :email, :password, :password_confirmation
   
   has_many :post
 
-  validates :email, :presence => true
+  validates :username, :email, :presence => true
 
   before_save :first_is_admin
   

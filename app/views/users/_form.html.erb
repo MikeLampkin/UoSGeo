@@ -2,6 +2,14 @@
 <table class="table table-striped table-bordered span5">
 	<tr>
 		<td class="control-group"> 
+<%= f.label "Full Name", :class => 'control-label' %>
+</td><td>
+<%= f.text_field :username, :class => 'text_field' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="control-group"> 
 <%= f.label :email, :class => 'control-label' %>
 </td><td>
 <%= f.text_field :email, :class => 'text_field' %>

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th>Name</th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><center><%= model_class.human_attribute_name(:admin) %></center></th>
       <th><center><%= model_class.human_attribute_name(:active) %></center></th>
@@ -17,6 +18,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.id, user_path(user) %></td>
+        <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><center><% if user.admin %>
           <i class="icon-ok" style="color: green;"></i>

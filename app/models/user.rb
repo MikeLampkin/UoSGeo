@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :active, :username, :admin, :email, :password, :password_confirmation
   
-  has_many :post
+  has_many :posts
 
   validates :username, :email, :presence => true
 

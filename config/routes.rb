@@ -2,7 +2,6 @@ UoSGeo::Application.routes.draw do
   resources :posts
   resources :qandas
   resources :users
-  resources :reports
 
   resources :sessions
   get 'register', to: 'users#new', as: 'register'

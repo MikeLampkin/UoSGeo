@@ -1,8 +1,4 @@
-<h1>My Answer Sheet</h1>
-
-<div class="font-color:#ffffcc;color:red;">I would love for this page to show all the possible merit badges in the database and show the corresponding answer (or none) from the user.</div>
-
-<!-- <%= link_to 'New Answer', new_post_path, :class => 'btn btn-primary' %> -->
+<h1>My Answer Sheet : <%= current_user.username %></h1>
 
 
 <table class="table table-hover table-condensed table-bordered">
@@ -13,7 +9,9 @@
   </tr>
 
 <% @posts.each do |post| %>
+<% if current_user %>
   <tr>
+
     <td><table class="table-condensed table-hover"><tr><td class="span2"><center>
 <%= image_tag 'meritbadges/'+post.qanda.image, :height => '40px', :width => '40px'  %><br>
 <%= post.qanda.meritbadge %>
@@ -25,6 +23,7 @@
     <td class="span1"><center><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini btn-primary'  %></td>
 
   </tr>
+    <% end %>
 <% end %>
 </table>
 

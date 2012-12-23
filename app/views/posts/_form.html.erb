@@ -1,5 +1,6 @@
 <%= form_for(@post) do |f| %>
 <%= f.hidden_field :user_email, :value => current_user.email %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">

@@ -11,15 +11,14 @@
   </tr>
 
 <% if current_user %>
-<% @posts.each do |post| %>
+<% Qanda.all.map { |q| [q.id,Post.where(user_id: current_user.id, qanda_id: q.id).first.try(:my_answer)] }.each do |answers| %>
   <tr>
-    <td><%= image_tag 'meritbadges/'+post.qanda.image, :height => '40px', :width => '40px'  %><br><%= post.qanda.meritbadge %></td>
-    <td><%= post.qanda.question %></td>
-    <td class="span5"><%= post.my_answer %></td>
-    <td class="span1"><center><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini btn-primary'  %>
+    <td><%= image_tag 'meritbadges/'+ Qanda.find(answers.first).image, :height => '40px', :width => '40px'  %><br><%= Qanda.find(answers.first).meritbadge %></td>
+    <td><%= Qanda.find(answers.first).question %></td>
+    <td class="span5"><%= answers.last %></td>
+    <td class="span1"><center><%= link_to 'Edit', new_post_path(), :class => 'btn btn-mini btn-primary'  %>
 <br>
-    <%= link_to 'Destroy', post, :class => 'btn btn-mini btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-
+    
     </td>
   </tr>
     <% end %>

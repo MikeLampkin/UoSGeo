@@ -7,7 +7,7 @@
     <tr>
       <th>EMAIL</th>
       <th>ANSWERS</th>
-      <th>VIEW</th>
+      <th>ADMIN</th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,7 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.posts.count %></td>
-        <td> </td>
+      <td> link_to 'Show', user.posts </td>
       </tr>
     <% end %>
   </tbody>

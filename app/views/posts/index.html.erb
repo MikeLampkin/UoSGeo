@@ -16,9 +16,14 @@
     <td><%= image_tag 'meritbadges/'+ Qanda.find(answers.first).image, :height => '40px', :width => '40px'  %><br><%= Qanda.find(answers.first).meritbadge %></td>
     <td><%= Qanda.find(answers.first).question %></td>
     <td class="span5"><%= answers.last %></td>
-    <td class="span1"><center><%= link_to 'Edit', new_post_path(), :class => 'btn btn-mini btn-primary'  %>
-<br>
+    <td class="span1"><center>
     
+<% if answers.last %>
+    <%= link_to 'Edit', edit_post_path(id), :class => 'btn btn-mini btn-success' %>
+<% else %>
+    <%= link_to 'Edit', new_post_path(), :class => 'btn btn-mini btn-primary'  %>
+<% end %>
+
     </td>
   </tr>
     <% end %>

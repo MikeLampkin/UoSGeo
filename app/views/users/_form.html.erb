@@ -1,6 +1,12 @@
 <%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-
-<%= f.hidden_field :active, :value => '1' %>
+<% if @user.errors.present? %>
+   <div class="alert alert-error">
+  <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+<% end %>
+</div>
+   <%= f.hidden_field :active, :value => '1' %>
 
 <table class="table table-striped table-bordered span5">
 	<tr>

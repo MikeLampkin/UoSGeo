@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
 gem 'json'
 
 group :development do
-  gem 'pg'
+  gem 'sqlite3'
   gem 'hirb'
 end
 

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-
+    @post.qanda_id = params[:qanda_id] if params[:qanda_id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }

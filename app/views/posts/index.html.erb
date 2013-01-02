@@ -19,9 +19,9 @@
     <td class="span1"><center>
     
 <% if answers.last %>
-    <%= link_to 'Edit', edit_post_path(id), :class => 'btn btn-mini btn-success' %>
+    <%= link_to 'Edit', edit_post_path(answers.first), :class => 'btn btn-mini btn-success' %>
 <% else %>
-    <%= link_to 'Edit', new_post_path(), :class => 'btn btn-mini btn-primary'  %>
+    <%= link_to 'Edit', new_post_path(qanda_id: answers.first), :class => 'btn btn-mini btn-primary'  %>
 <% end %>
 
     </td>

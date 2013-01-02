@@ -11,7 +11,7 @@
   </tr>
 
 <% if current_user %>
-<% Qanda.all.map { |q| [q.id,Post.where(user_id: current_user.id, qanda_id: q.id).first.try(:my_answer)] }.each do |answers| %>
+<% Qanda.all.map { |q| [q.id,Post.where(user_id: current_user.id, qanda_id: q.id).first.try(:id), Post.where(user_id: current_user.id, qanda_id: q.id).first.try(:my_answer)] }.each do |answers| %>
   <tr>
     <td><%= image_tag 'meritbadges/'+ Qanda.find(answers.first).image, :height => '40px', :width => '40px'  %><br><%= Qanda.find(answers.first).meritbadge %></td>
     <td><%= Qanda.find(answers.first).question %></td>
@@ -19,7 +19,7 @@
     <td class="span1"><center>
     
 <% if answers.last %>
-    <%= link_to 'Edit', edit_post_path(answers.first), :class => 'btn btn-mini btn-success' %>
+    <%= link_to 'Edit', edit_post_path(answers.second), :class => 'btn btn-mini btn-success' %>
 <% else %>
     <%= link_to 'Edit', new_post_path(qanda_id: answers.first), :class => 'btn btn-mini btn-primary'  %>
 <% end %>

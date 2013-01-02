@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   
   has_many :posts
 
-  validates :username, :email, :presence => true
+  validates :username, :email, :presence => true, uniqueness: true
 
   before_save :first_is_admin
   
